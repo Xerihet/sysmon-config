@@ -3093,6 +3093,7 @@
 			<Image condition="is">C:\Program Files (x86)\Lenovo\System Update\TvsuCommandLauncher.exe</Image>
 			<!--SECTION: Fortinet-->
 			<Image condition="is">C:\Program Files (x86)\Fortinet\FortiClient\FortiSSLVPNdaemon.exe</Image>
+			<Image condition="is">C:\Program Files\Fortinet\FortiClient\FortiClient.exe</Image>
 			<!--SECTION: Sophos VPN Client-->
 			<Image condition="is">c:\program files (x86)\sophos\sophos ssl vpn client\bin\openvpnserv.exe</Image>
 			<!--SECTION: Labtech-->
