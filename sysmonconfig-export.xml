@@ -3119,6 +3119,7 @@
 			<Image condition="is">C:\Program Files (x86)\Fortinet\FortiClient\update_task.exe</Image>
 			<Image condition="is">C:\Program Files (x86)\Fortinet\FortiClient\FortiTray.exe</Image>
 			<Image condition="is">C:\Program Files (x86)\Fortinet\FortiClient\FCDBLog.exe</Image>
+			<Image condition="is">C:\Program Files\Fortinet\FortiClient\FortiClient.exe</Image>
 			<Image condition="is">C:\Program Files (x86)\Enpass\Enpass.exe</Image>
 			<Image condition="is">C:\Program Files (x86)\VMware\VMware Horizon View Client\vmware-view.exe</Image>
 			<Image condition="is">C:\Program Files (x86)\VMware\ScannerRedirection\ftscanmgrhv.exe</Image>
