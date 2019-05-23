@@ -932,7 +932,7 @@
 			<Image condition="image">chrome.exe</Image> <!--Chrome constantly changes file times-->
 			<Image condition="image">C:\WINDOWS\system32\backgroundTaskHost.exe</Image> <!--Chrome constantly changes file times-->
 			<Image condition="contains">setup</Image> <!--Ignore setups-->
-			<Image condition="contains">AppData\Local\Microsoft\Teams\current\Teams.exe</Image>
+			<Image condition="ends with">AppData\Local\Microsoft\Teams\current\Teams.exe</Image>
 		</FileCreateTime>
 
 	<!--SYSMON EVENT ID 3 : NETWORK CONNECTION INITIATED [NetworkConnect]-->
@@ -1386,6 +1386,7 @@
 			<Image condition="image">g2ax_comm_expert.exe</Image> <!--GoToMeeting-->
 			<Image condition="image">g2mcomm.exe</Image> <!--GoToMeeting-->
 			<Image condition="end with">AppData\Local\Microsoft\Teams\current\Teams.exe</Image> <!--Microsoft: Teams-->
+			<Image condition="is">C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeClickToRun.exe</Image>
 			<DestinationPort condition="is">53</DestinationPort>   <!--DNS Lookups-->
 		</NetworkConnect>
 	<!--SYSMON EVENT ID 4 : RESERVED FOR SYSMON STATUS MESSAGES-->
