@@ -932,6 +932,7 @@
 			<Image condition="image">chrome.exe</Image> <!--Chrome constantly changes file times-->
 			<Image condition="image">C:\WINDOWS\system32\backgroundTaskHost.exe</Image> <!--Chrome constantly changes file times-->
 			<Image condition="contains">setup</Image> <!--Ignore setups-->
+			<Image condition="contains">AppData\Local\Microsoft\Teams\current\Teams.exe</Image>
 		</FileCreateTime>
 
 	<!--SYSMON EVENT ID 3 : NETWORK CONNECTION INITIATED [NetworkConnect]-->
@@ -3071,6 +3072,7 @@
 			<PipeName condition="contains">GoogleCrashServices</PipeName>
 			<!--SECTION: Other-->
 			<Image condition="end with">slack.exe</Image>
+			<Image condition="is">C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MousewithoutBordersHelper.exe</Image>
 			<!--SECTION: ConnectWise-->
 			<PipeName condition="contains">booma\</PipeName>
 			<!--SECTION: EnPass-->
