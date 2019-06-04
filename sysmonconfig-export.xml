@@ -1148,27 +1148,27 @@
 			<DestinationHostname name="Alert=Crypto Currency Miner" condition="contains">cryptmonero</DestinationHostname>
 			<DestinationHostname name="Alert=Crypto Currency Miner" condition="contains">mineXMR</DestinationHostname>
 			<!--Ports-->
-			<DestinationPort name="Technique=Commonly Used Port,Tactic=Command and Control,MitreRef=1043" condition="is">80</DestinationPort>
-			<DestinationPort name="Technique=Commonly Used Port,Tactic=Command and Control,MitreRef=1043" condition="is">443</DestinationPort>
-			<DestinationPort name="Service=Remote Desktop Connection" condition="is">3389</DestinationPort>
-			<DestinationPort condition="is">3540</DestinationPort> <!--Remote Assistance Port-->
-			<DestinationPort name="Technique=Commonly Used Port,Tactic=Command and Control,MitreRef=1043" condition="is">22</DestinationPort>
-			<DestinationPort name="Technique=Commonly Used Port,Tactic=Command and Control,MitreRef=1043" condition="is">23</DestinationPort>
-			<DestinationPort name="Technique=Commonly Used Port,Tactic=Command and Control,MitreRef=1043" condition="is">25</DestinationPort>
-			<DestinationPort name="Technique=Commonly Used Port,Tactic=Command and Control,MitreRef=1043" condition="is">139</DestinationPort>
-			<!--<DestinationPort condition="is">445</DestinationPort> SMB Port: Removed because of noise-->
-			<DestinationPort name="Service=VNC" condition="is">5800</DestinationPort>
-			<DestinationPort name="Service=VNC" condition="is">5900</DestinationPort>
-			<DestinationPort name="Service=OpenVPN,suspicious_net_event=True" condition="is">1194</DestinationPort>
-			<DestinationPort name="Service=L2TP,suspicious_net_event=True" condition="is">1701</DestinationPort>
-			<DestinationPort name="Service=TOR,suspicious_net_event=True" condition="is">1723</DestinationPort>
-			<DestinationPort name="Service=IPSec" condition="is">1293</DestinationPort>
-			<DestinationPort name="Service=Tor,suspicious_net_event=True" condition="is">4500</DestinationPort>
+			<!--Ports: Suspicious-->
+			<DestinationPort name="Service=SSH,suspicious_net_event=True" condition="is">22</DestinationPort> <!--SSH protocol, monitor admin connections-->
+			<DestinationPort name="Service=Telnet,suspicious_net_event=True" condition="is">23</DestinationPort> <!--Telnet protocol, monitor admin connections, insecure-->
+			<DestinationPort name="Service=SMTP,suspicious_net_event=True" condition="is">25</DestinationPort> <!--SMTP mail protocol port, insecure, used by threats-->
+			<DestinationPort name="Service=IMAP,suspicious_net_event=True" condition="is">142</DestinationPort> <!--IMAP mail protocol port, insecure, used by threats-->
+			<DestinationPort name="Service=RDP,suspicious_net_event=True" condition="is">3389</DestinationPort> <!--Microsoft:Windows:RDP: Monitor admin connections-->
+			<DestinationPort name="Service=VNC,suspicious_net_event=True" condition="is">5800</DestinationPort> <!--VNC protocol: Monitor admin connections, often insecure-->
+			<DestinationPort name="Service=VNC,suspicious_net_event=True" condition="is">5900</DestinationPort> <!--VNC protocol Monitor admin connections, often insecure-->
+			<!--Ports: Proxy-->
 			<DestinationPort name="Service=Socks Proxy Port" condition="is">1080</DestinationPort>
 			<DestinationPort name="Service=Socks Proxy Port" condition="is">8080</DestinationPort>
 			<DestinationPort name="Service=Socks Proxy Port" condition="is">3128</DestinationPort>
-			<DestinationPort name="Service=Tor,suspicious_net_event=True" condition="is">9001</DestinationPort>
-			<DestinationPort name="Service=Tor,suspicious_net_event=True" condition="is">9030</DestinationPort>
+			<!--Ports: Tor-->
+			<DestinationPort name="Service=TOR,suspicious_net_event=True" condition="is">1723</DestinationPort> <!--Tor protocol [ https://attack.mitre.org/wiki/Technique/T1090 ] | Credit @ion-storm-->
+			<DestinationPort name="Service=TOR,suspicious_net_event=True" condition="is">4500</DestinationPort> <!--Tor protocol, also triggers on IPsec [ https://attack.mitre.org/wiki/Technique/T1090 ] | Credit @ion-storm-->
+			<DestinationPort name="Service=TOR,suspicious_net_event=True" condition="is">9001</DestinationPort> <!--Tor protocol [ http://www.computerworlduk.com/tutorial/security/tor-enterprise-2016-blocking-malware-darknet-use-rogue-nodes-3633907/ ] -->
+			<DestinationPort name="Service=TOR,suspicious_net_event=True" condition="is">9030</DestinationPort> <!--Tor protocol [ http://www.computerworlduk.com/tutorial/security/tor-enterprise-2016-blocking-malware-darknet-use-rogue-nodes-3633907/ ] -->
+			<!--<DestinationPort condition="is">445</DestinationPort> SMB Port: Removed because of noise-->
+			<DestinationPort name="Service=OpenVPN,suspicious_net_event=True" condition="is">1194</DestinationPort>
+			<DestinationPort name="Service=L2TP,suspicious_net_event=True" condition="is">1701</DestinationPort>
+			<DestinationPort name="Service=IPSec" condition="is">1293</DestinationPort>
 			<DestinationPort name="Info=Suspicious Ports: https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo,suspicious_net_event=True" condition="is">4443</DestinationPort>
 			<DestinationPort name="Info=Suspicious Ports: https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo,suspicious_net_event=True" condition="is">2448</DestinationPort>
 			<DestinationPort name="Info=Suspicious Ports: https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo,suspicious_net_event=True" condition="is">8143</DestinationPort>
